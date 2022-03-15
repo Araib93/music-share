@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Spotify Share</string>
+<!--    <string name="str_qr_code">https://scannables.scdn.co/uri/plain/png/%06X/white/512/%s</string>-->
+    <string name="str_qr_code">https://scannables.scdn.co/uri/plain/png/000000/white/512/%s</string>
+    <string name="shortcut_label_listen_only">Listen</string>
+    <string name="shortcut_label_long_listen_only">Listen to music and enjoy</string>
+</resources>

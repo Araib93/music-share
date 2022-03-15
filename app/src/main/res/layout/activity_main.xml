@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cv_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:clickable="true"
+    android:focusable="true"
+    tools:context=".MainActivity">
+
+    <ro.holdone.pulseview.PulsingAnimationView
+        android:id="@+id/pav_animation"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:autoplay="true"
+        app:baseRadius="110dp"
+        app:layout_constraintBottom_toBottomOf="@id/siv_album_art"
+        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintTop_toTopOf="@id/siv_album_art"
+        app:strokeWidth="15.0dp"
+        app:waveDistance="30dp" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/siv_album_art"
+        android:layout_width="225dp"
+        android:layout_height="225dp"
+        android:outlineProvider="bounds"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toTopOf="@id/tv_track_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.35"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.AlbumArt"
+        tools:src="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/tv_track_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="120dp"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="2"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
+        app:layout_constraintBottom_toTopOf="@id/tv_artist_name"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/siv_album_art"
+        tools:text="Brainstorm" />
+
+    <TextView
+        android:id="@+id/tv_artist_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="4dp"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="2"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_track_name"
+        tools:text="Alexandar32" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/siv_track_qr"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:background="@color/black"
+        android:elevation="8dp"
+        android:scaleType="fitCenter"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_artist_name"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.QrCode" />
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/efab_share"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="0dp"
+        android:gravity="center"
+        android:text="Share"
+        app:icon="@drawable/ic_baseline_share_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_artist_name"
+        tools:visibility="gone" />
+</androidx.constraintlayout.widget.ConstraintLayout>
